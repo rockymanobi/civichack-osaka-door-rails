@@ -1,6 +1,17 @@
 class TestStallsController < ApplicationController
   before_action :set_test_stall, only: [:show, :edit, :update, :destroy]
 
+  def sync
+    uuid = params[:uuid]
+    status = params[:status]
+
+    p uuid
+    p status
+    p "~~~~~~~~~~~~~~"
+    render json: nil
+  end
+
+
   # GET /test_stalls
   # GET /test_stalls.json
   def index
