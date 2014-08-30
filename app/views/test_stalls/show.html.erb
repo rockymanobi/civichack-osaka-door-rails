@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @test_stall.name %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @test_stall.uuid %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @test_stall.status %>
+</p>
+
+<%= link_to 'Edit', edit_test_stall_path(@test_stall) %> |
+<%= link_to 'Back', test_stalls_path %>

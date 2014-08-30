@@ -1,0 +1,29 @@
+<h1>Listing test_stalls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Uuid</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_stalls.each do |test_stall| %>
+      <tr>
+        <td><%= test_stall.name %></td>
+        <td><%= test_stall.uuid %></td>
+        <td><%= test_stall.status %></td>
+        <td><%= link_to 'Show', test_stall %></td>
+        <td><%= link_to 'Edit', edit_test_stall_path(test_stall) %></td>
+        <td><%= link_to 'Destroy', test_stall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test stall', new_test_stall_path %>
