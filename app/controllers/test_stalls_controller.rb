@@ -23,13 +23,13 @@ class TestStallsController < ApplicationController
       p @stall.created_at
       p @stall.created_at
       p @stall.created_at
-      test_log.changed_at = @stall.created_at
+      test_log.changed_at = @stall.updated_at
       test_log.save!
     end
 
 
-    # root = "http://localhost:3000/"
-    root = "http://pocket-test-sv.herokuapp.com/"
+    root = "http://localhost:3000/"
+    #root = "http://pocket-test-sv.herokuapp.com/"
 
     url = URI.parse( root + 'sync?status=' + @stall.status.to_s)
     Net::HTTP.get(url)
