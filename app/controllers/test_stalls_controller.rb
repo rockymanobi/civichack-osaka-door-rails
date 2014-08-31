@@ -19,6 +19,11 @@ class TestStallsController < ApplicationController
       test_log = TestLog.new
       test_log.test_stall = @stall
       test_log.status = @stall.status
+      p @stall.created_at
+      p @stall.created_at
+      p @stall.created_at
+      p @stall.created_at
+      test_log.changed_at = @stall.created_at
       test_log.save!
     end
 

@@ -69,6 +69,6 @@ class TestLogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_log_params
-      params.require(:test_log).permit(:test_stall_id, :status)
+      params.require(:test_log).permit(:test_stall_id, :status, :changed_at)
     end
 end
