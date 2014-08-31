@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Test stall:</strong>
+  <%= @test_log.test_stall %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @test_log.status %>
+</p>
+
+<%= link_to 'Edit', edit_test_log_path(@test_log) %> |
+<%= link_to 'Back', test_logs_path %>

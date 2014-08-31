@@ -1,9 +1,33 @@
+require 'net/http'
 class TestStallsController < ApplicationController
   before_action :set_test_stall, only: [:show, :edit, :update, :destroy]
+  
 
   def sync
     uuid = params[:uuid]
     status = params[:status]
+
+    @stall = TestStall.find_by( uuid: uuid);
+
+    old_status = @stall.status
+
+
+    @stall.status = status;
+    @stall.save!
+
+    if old_status != @stall.status
+      test_log = TestLog.new
+      test_log.test_stall = @stall
+      test_log.status = @stall.status
+      test_log.save!
+    end
+
+
+    # root = "http://localhost:3000/"
+    root = "http://pocket-test-sv.herokuapp.com/"
+
+    url = URI.parse( root + 'sync?status=' + @stall.status.to_s)
+    Net::HTTP.get(url)
 
     p uuid
     p status

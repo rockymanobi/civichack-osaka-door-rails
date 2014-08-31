@@ -1,0 +1,27 @@
+<h1>Listing test_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test stall</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_logs.each do |test_log| %>
+      <tr>
+        <td><%= test_log.test_stall %></td>
+        <td><%= test_log.status %></td>
+        <td><%= link_to 'Show', test_log %></td>
+        <td><%= link_to 'Edit', edit_test_log_path(test_log) %></td>
+        <td><%= link_to 'Destroy', test_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test log', new_test_log_path %>

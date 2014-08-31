@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :test_logs
+
   resources :test_stalls do
     collection do
       get 'sync'   #手抜き
