@@ -28,8 +28,8 @@ class TestStallsController < ApplicationController
     end
 
 
-    root = "http://localhost:3000/"
-    #root = "http://pocket-test-sv.herokuapp.com/"
+    #root = "http://localhost:3000/"
+    root = "http://pocket-test-sv.herokuapp.com/"
 
     url = URI.parse( root + 'sync?status=' + @stall.status.to_s)
     Net::HTTP.get(url)
