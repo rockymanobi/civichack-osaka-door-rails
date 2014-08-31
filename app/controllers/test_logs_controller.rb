@@ -4,7 +4,7 @@ class TestLogsController < ApplicationController
   # GET /test_logs
   # GET /test_logs.json
   def index
-    @test_logs = TestLog.all
+    @test_logs = TestLog.where.not( changed_at: nil)
   end
 
   # GET /test_logs/1
